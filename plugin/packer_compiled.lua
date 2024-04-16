@@ -106,6 +106,12 @@ _G.packer_plugins = {
     path = "/Users/yumi/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  ["format-on-save.nvim"] = {
+    config = { "\27LJ\2\n“\3\0\0\6\0\16\0\0266\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\1\3\0015\3\5\0005\4\4\0=\4\6\0035\4\b\0009\5\a\0=\5\t\0049\5\a\0=\5\n\4=\4\v\0034\4\4\0009\5\f\0>\5\1\0049\5\r\0>\5\2\0049\5\14\0>\5\3\4=\4\15\3B\1\2\1K\0\1\0\23fallback_formatter\14prettierd\29remove_trailing_newlines\31remove_trailing_whitespace\20formatter_by_ft\blua\trust\1\0\2\trust\0\blua\0\blsp\26exclude_path_patterns\1\0\3\26exclude_path_patterns\0\23fallback_formatter\0\20formatter_by_ft\0\1\3\0\0\19/node_modules/\r/target/\nsetup\19format-on-save\30format-on-save.formatters\frequire\0" },
+    loaded = true,
+    path = "/Users/yumi/.local/share/nvim/site/pack/packer/start/format-on-save.nvim",
+    url = "https://github.com/elentok/format-on-save.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/yumi/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -195,14 +201,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
-time([[Config for alpha-nvim]], false)
+-- Config for: format-on-save.nvim
+time([[Config for format-on-save.nvim]], true)
+try_loadstring("\27LJ\2\n“\3\0\0\6\0\16\0\0266\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\1\3\0015\3\5\0005\4\4\0=\4\6\0035\4\b\0009\5\a\0=\5\t\0049\5\a\0=\5\n\4=\4\v\0034\4\4\0009\5\f\0>\5\1\0049\5\r\0>\5\2\0049\5\14\0>\5\3\4=\4\15\3B\1\2\1K\0\1\0\23fallback_formatter\14prettierd\29remove_trailing_newlines\31remove_trailing_whitespace\20formatter_by_ft\blua\trust\1\0\2\trust\0\blua\0\blsp\26exclude_path_patterns\1\0\3\26exclude_path_patterns\0\23fallback_formatter\0\20formatter_by_ft\0\1\3\0\0\19/node_modules/\r/target/\nsetup\19format-on-save\30format-on-save.formatters\frequire\0", "config", "format-on-save.nvim")
+time([[Config for format-on-save.nvim]], false)
 -- Config for: rose-pine
 time([[Config for rose-pine]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
 time([[Config for rose-pine]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\na\0\0\5\0\5\0\n6\0\0\0'\2\1\0B\0\2\0029\0\2\0006\2\0\0'\4\3\0B\2\2\0029\2\4\2B\0\2\1K\0\1\0\vconfig\27alpha.themes.dashboard\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\ng\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\ftoggler\1\0\1\ftoggler\0\1\0\1\tline\14<leader>/\nsetup\fComment\frequire\0", "config", "Comment.nvim")

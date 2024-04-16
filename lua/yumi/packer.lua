@@ -82,5 +82,27 @@ return require("packer").startup(function(use)
  	}
 
 	use "Shatur/neovim-session-manager"
+
+	use {
+		"elentok/format-on-save.nvim",
+		config = function()
+			local formatters = require("format-on-save.formatters")
+			require("format-on-save").setup({
+				exclude_path_patterns = {
+					"/node_modules/",
+					"/target/"
+				},
+				formatter_by_ft = {
+					  rust = formatters.lsp,
+						lua = formatters.lsp,
+				},
+				fallback_formatter = {
+					formatters.remove_trailing_whitespace,
+					formatters.remove_trailing_newlines,
+					formatters.prettierd,
+				},
+			})
+		end
+	}
 end)
 
