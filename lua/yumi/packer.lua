@@ -4,8 +4,20 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
    use {
-     "nvim-telescope/telescope.nvim", tag = "0.1.6",
-     requires = {{ "nvim-lua/plenary.nvim" }}
+		 "nvim-telescope/telescope.nvim",
+		 tag = "0.1.6",
+		 requires = {{ "nvim-lua/plenary.nvim" }},
+		 config = function()
+			 require("telescope").setup{
+				 defaults = {
+					 file_ignore_patterns = {
+						 "node_modules",
+						 "target",
+					 }
+				 }
+			 }
+		 end
+
    }
 
    use ({
@@ -87,7 +99,9 @@ return require("packer").startup(function(use)
 		"elentok/format-on-save.nvim",
 		config = function()
 			local formatters = require("format-on-save.formatters")
+			local vim_notify = require("format-on-save.error-notifiers.vim-notify")
 			require("format-on-save").setup({
+				error_notifier = vim_notify,
 				exclude_path_patterns = {
 					"/node_modules/",
 					"/target/"
@@ -95,6 +109,7 @@ return require("packer").startup(function(use)
 				formatter_by_ft = {
 					  rust = formatters.lsp,
 						lua = formatters.lsp,
+						yaml = formatters.lsp,
 				},
 				fallback_formatter = {
 					formatters.remove_trailing_whitespace,
@@ -105,4 +120,5 @@ return require("packer").startup(function(use)
 		end
 	}
 end)
+
 
