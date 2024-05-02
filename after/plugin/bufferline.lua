@@ -1,7 +1,7 @@
 vim.opt.termguicolors = true
 require("bufferline").setup({
 	options = {
-		diagnostics = "coc",
+		diagnostics = "nvim_lsp",
 		offsets = {
 			{ filetype = "Neotree" }
 		},

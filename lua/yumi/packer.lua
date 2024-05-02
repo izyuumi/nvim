@@ -13,6 +13,7 @@ return require("packer").startup(function(use)
 					 file_ignore_patterns = {
 						 "node_modules",
 						 "target",
+						 "nvim_sessions",
 					 }
 				 }
 			 }
@@ -61,13 +62,11 @@ return require("packer").startup(function(use)
  		}
  	}
 
-   use {
-     "lewis6991/gitsigns.nvim"
-   }
+  use {
+    "lewis6991/gitsigns.nvim"
+  }
 
-   use 'andweeb/presence.nvim'
-
- 	use {'neoclide/coc.nvim', branch = 'release'}
+  use 'andweeb/presence.nvim'
 
  	use {
      'numToStr/Comment.nvim',
@@ -119,6 +118,35 @@ return require("packer").startup(function(use)
 			})
 		end
 	}
-end)
 
+	use {
+		"nvimtools/none-ls.nvim",
+		requires = "nvimtools/none-ls-extras.nvim",
+		config = function()
+			local null_ls = require("null-ls")
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.formatting.stylua,
+					null_ls.builtins.completion.spell,
+					require("none-ls.diagnostics.eslint"), -- requires none-ls-extras.nvim
+				},
+			})
+		end
+	}
+
+	use {
+		"hrsh7th/cmp-nvim-lsp",
+		config = function()
+			require'cmp'.setup {
+				sources = {
+					{ name = 'nvim_lsp' }
+				}
+			}
+			local capabilities = require('cmp_nvim_lsp').default_capabilities()
+			require('lspconfig').clangd.setup {
+				capabilities = capabilities,
+			}
+		end
+	}
+end)
 
